@@ -1,7 +1,8 @@
-package io.papermc.paper.configuration.serializer.collection.map;
+package io.papermc.paper.configuration.serializer.collections;
 
 import io.leangen.geantyref.GenericTypeReflector;
 import io.leangen.geantyref.TypeFactory;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.AnnotatedParameterizedType;
 import java.lang.reflect.AnnotatedType;
 import java.lang.reflect.ParameterizedType;
