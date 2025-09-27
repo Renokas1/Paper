@@ -1043,6 +1043,12 @@
                      leashable.setLeashedTo(player, true);
                  }
  
+@@ -2105,4 +_,4 @@
+     protected static Vec3 getDefaultPassengerAttachmentPoint(Entity vehicle, Entity passenger, EntityAttachments attachments) { 
+         int index = vehicle.getPassengers().indexOf(passenger); 
+-        return attachments.getClamped(EntityAttachment.PASSENGER, index, vehicle.yRot); 
++        return attachments.get(EntityAttachment.PASSENGER, index, 0); 
+     }
 @@ -2116,11 +_,11 @@
      }
  
