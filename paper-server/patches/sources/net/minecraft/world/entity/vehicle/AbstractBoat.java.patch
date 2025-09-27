@@ -84,6 +84,37 @@
                  this.setDeltaMovement(this.getDeltaMovement().multiply(1.0, 0.0, 1.0));
                  this.lastYd = 0.0;
              }
+@@ -677,13 +_,3 @@
+-    protected void positionRider(Entity passenger, Entity.MoveFunction callback) {
+-        super.positionRider(passenger, callback);
+-        if (!passenger.getType().is(EntityTypeTags.CAN_TURN_IN_BOATS)) {
+-            passenger.setYRot(passenger.getYRot() + this.deltaRotation);
+-            passenger.setYHeadRot(passenger.getYHeadRot() + this.deltaRotation);
+-            this.clampRotation(passenger);
+-            if (passenger instanceof Animal && this.getPassengers().size() == this.getMaxPassengers()) {
+-                int i = passenger.getId() % 2 == 0 ? 90 : 270;
+-                passenger.setYBodyRot(((Animal)passenger).yBodyRot + i);
+-                passenger.setYHeadRot(passenger.getYHeadRot() + i);
+-            }
+-        }
+-    }
++    protected void positionRider(Entity passenger, Entity.MoveFunction callback) {
++        super.positionRider(passenger, callback);
++    }
+@@ -725,8 +_,5 @@
+-    protected void clampRotation(Entity entity) {
+-        entity.setYBodyRot(this.getYRot());
+-        float f = Mth.wrapDegrees(entity.getYRot() - this.getYRot());
+-        float f1 = Mth.clamp(f, -105.0F, 105.0F);
+-        entity.yRotO += f1 - f;
+-        entity.setYRot(entity.getYRot() + f1 - f);
+-        entity.setYHeadRot(entity.getYRot());
+-    }
++    protected void clampRotation(Entity entity) {
++        entity.setYBodyRot(this.getYRot());
++        entity.setYRot(entity.getYRot());
++        entity.setYHeadRot(entity.getYRot());
++    }
 @@ -762,11 +_,18 @@
  
      @Override
